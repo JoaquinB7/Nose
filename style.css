@@ -1,0 +1,564 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Custom element styles */
+:root{
+    --ff-primary: 'Source Sans Pro', sans-serif;
+    --ff-secondary: 'Source Code Pro', monospace;
+
+    --fw-reg: 300;
+    --fw-regbold: 450;
+    --fw-darker: 600;
+    --fw-bold: 900;
+
+    --clr-light: rgba(255, 255, 255, 0.637);
+    --clr-dark: #303030;
+    --clr-grey: #41414156;
+    --clr-accent: #04705e;
+    --clr-superlight: #ededed  ;
+
+    --fs-h1: 3rem;
+    --fs-h2: 2.25rem;
+    --fs-h3: 1.25rem;
+    --fs-body: 1rem;
+
+    --bs: 0.25em 0.25em 0.75em rgba(0,0,0,0.25),
+          0.125em 0.125em 0.25em rgba(0,0,0,0.15);
+}
+
+@media (min-width: 800px) {
+    :root{
+        --fs-h1: 4.5rem;
+        --fs-h2: 3.75rem;
+        --fs-h3: 1.5rem;
+        --fs-body: 1.125rem;
+    }
+}
+
+
+/*Gral Styles*/
+
+body {
+    background: var(--clr-light);
+    color: var(--clr-dark);
+    margin: 0;
+    font-family: var(--ff-primary);
+    font-size: var(--fs-body);
+    line-height: 1.6;
+
+}
+
+section {
+    padding: 5em 2em;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+:focus{
+    outline: 3px solid var(--clr-accent);
+    outline-offset: 3px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.5em 2.5em;
+    background: var(--clr-accent);
+    color: var(--clr-light);
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: var(--fw-bold);
+    transition: transform 200ms ease-in-out;
+}
+
+.btn:hover {
+    transform: scale(1.1);
+}
+
+/*Tipografia*/
+
+h1,
+h2,
+h3 {
+    line-height: 1;
+    margin: 0;
+
+}
+
+h1 {font-size: var(--fs-h1);}
+h2 {font-size: var(--fs-h2);}
+h3 {font-size: var(--fs-h3);}
+
+.section__tittle {
+    margin-bottom: 0.25em;
+}
+
+.section__tittle--intro{
+    font-weight: var(--fw-reg);
+}
+
+
+.section__subtitle {
+    margin: 0;
+    font-size: var(--fs-h3)
+
+}
+
+.section__subtitle--intro {
+    background: var(--clr-accent);
+    padding: 0.25em 1em;
+    font-family: var(--ff-secondary);
+    margin-top: 0.25em;
+    margin-bottom: 1em;
+}
+
+
+/* Header */
+
+
+nav { display: none; }
+
+
+/* Intro Section*/
+
+
+.intro { 
+    position: relative;
+
+}
+
+.intro__img {
+    box-shadow: var(--bs);
+}
+
+ @media (min-width: 600px) {
+    .intro {
+         display: grid;
+         width: min-content;
+         margin: 0 auto;
+         grid-column-gap: 1em;
+         grid-template-areas: 
+            "img title"
+            "img subtitle";
+        grid-template-columns: min-content max-content;
+        
+    }
+
+    .intro__img {
+        grid-area: img;
+        border-radius: 0%;
+        min-width: 250px;
+        position: relative;
+        z-index: 2;
+
+    }
+
+    .section__subtitle--intro {
+        align-self: start;
+        grid-column: -1/1;
+        grid-row: 2;
+        text-align: right;
+        position: relative;
+        left: -1.5em;
+        width: calc(100% + 1.5em);
+
+
+    }
+}
+
+ /* Experiencia */
+
+ .experience {
+    background-color: var(--clr-dark);
+    background-image: url(../Images/Fondo\ gris\ mas\ plano.webp);
+    background-size: cover;
+    background-blend-mode: multiply;
+    color: var(--clr-superlight);
+    text-align: left;
+
+ }
+
+ .section__tittle--experience {
+    color: var(--clr-accent);
+    position: relative;
+
+ }
+
+ .section__tittle--experience::after {
+    content: '';
+    display:block;
+    width: 2em;
+    height: 1px;
+    margin: 0.5em auto 1em;
+    background: var(--clr-light);
+    opacity: 1;
+ }
+
+ .services {
+    margin-bottom: 4em;
+ }
+
+ .service {
+    padding:0.5em;
+    ;
+ }
+
+ @media (min-width: 200px) {
+    .services {
+        display: block;
+        max-width: 1000px;
+       /* margin: 0 auto; */
+    }
+
+    .service + .service {
+        margin-top: 0.5em;
+    }
+
+    .works__img {
+        display: inline-block;
+        grid-area: img;
+        padding-right: 0.5em;
+        border-radius: 15%;
+        max-width: 100px;
+        margin-top ;
+        position: relative;
+        z-index: 0;
+        opacity: 0.75;
+
+    }
+
+ }
+
+
+
+/*Formacion Academica*/
+
+
+
+ .educacion {
+    background-color:var(--clr-dark);
+    background-image:url(../Images/Fondo\ Claro.jpeg);
+    background-size:cover;
+    background-blend-mode:multiply;
+    color: var(--clr-superlight);
+    text-align: right;
+
+ }
+
+ .section__tittle--educacion {
+    color: var(--clr-dark);
+    position: relative;
+
+ }
+
+ .section__tittle--educacion::after {
+    content: '';
+    display:block;
+    width: 2em;
+    height: 1px;
+    margin: 0.5em auto 1em;
+    background: var(--clr-light);
+    opacity: 1;
+ }
+
+ .educacion {
+    margin-bottom: 0em;
+ }
+
+ .instituto {
+    text-align: right;
+    padding:0.5em;
+    font-weight: var(--fw-reg);
+    text-indent: 13em;
+ }
+
+ @media (min-width: 200px) {
+    .educacion {
+        display: block;
+        max-width: 1400px;
+        /*margin: 0 auto; */
+    }
+
+    .instituto + .instituto {
+        margin-top: 2em;
+    }
+
+    .inst__img {
+        display: inline-block;
+        grid-area: img;
+        padding-left: 0.5em;
+        border-radius: 15%;
+        max-width: 125px;
+        margin-top ;
+        position: relative;
+        z-index: 0;
+        opacity: 0.75;
+
+    }
+
+ }
+
+
+ /*My Skills*/
+
+ .my-skills {
+    background-color: var(--clr-grey);
+    background-image:url(../Images/Fondo\ Claro.jpeg);
+    background-size:cover;
+    background-blend-mode:multiply;
+    color: var(--clr-dark);
+    text-align: center;
+ }
+
+ .section__title--skills {
+    margin-top: -1cm;
+ }
+
+ .section__subtitle--skills {
+    color: var(--clr-accent);
+    font-weight: var(--fw-regbold);
+    margin-bottom: 0.5em;
+ }
+
+ .portfolio {
+    display: grid;
+    justify-items: center;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    max-width: 100%;
+    margin: 0 auto;
+    padding-left: 0;
+    margin-bottom: -1cm;
+
+ }
+
+ .portfolio__item {
+    background: none;
+    overflow: visible;
+    padding: 0.5em;
+ }
+
+.portfolio__img {
+    transition: 
+    transform 750ms cubic-bezier(0.5, 0, 0.5, 1), 
+    opacity 250ms linear;
+}
+
+.portfolio__item:focus{
+    position: relative;
+    z-index: 2;
+}
+
+.portfolio__img:hover,
+.portfolio__item:focus .portfolio__img {
+    transform: scale(1.2);
+    opacity: 0.75;
+}
+
+/*Idiomas*/
+
+.my-idiomas {
+    background-color: var(--clr-light);
+    background-image:url(../Images/Fondo\ Claro.jpeg);
+    background-size:cover;
+    background-blend-mode:multiply;
+    color: var(--clr-dark);
+    text-align: center;
+ }
+
+ .section__title--idioma {
+    margin-top: -1cm;
+ }
+
+ .section__subtitle--idioma {
+    color: var(--clr-accent);
+    font-weight: var(--fw-regbold);
+    margin-bottom: 0.5em;
+ }
+
+ .idiomas {
+    display: grid;
+    justify-items: center;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    max-width: 50%;
+    margin: 0 auto;
+    padding-left: 0;
+    margin-bottom: -1cm;
+ }
+
+ .idioma__item {
+    background: none;
+    overflow: visible;
+    padding: 0.5em;
+ }
+
+.idioma__img {
+    transition: 
+    transform 750ms cubic-bezier(0.5, 0, 0.5, 1), 
+    opacity 250ms linear;
+}
+
+.idioma__item:focus{
+    position: relative;
+    z-index: 2;
+}
+
+.idioma__img:hover,
+.idioma__item:focus .idioma__img {
+    transform: scale(1.2);
+    opacity: 0.75;
+}
+
+
+/*Proyectos*/
+
+.proyectos {
+    background-color: var(--clr-accent);
+    background-image:url(../Images/Fondo\ Claro.jpeg);
+    background-size:cover;
+    background-blend-mode:multiply;
+    color: var(--clr-superlight);
+    text-align: ;
+ }
+
+.section__title--proyectos {
+    margin-bottom: 0.5em;
+}
+
+
+
+ /*Footer*/
+
+
+ .footer {
+    background: #111;
+    color: var(--clr-superlight);
+    text-align: center;
+    padding: 2.5em 0;
+    font-size: var(--fs-h3);
+
+ }
+
+ .footer a { 
+    color: var(--clr-accent);
+    text-decoration: none;
+    font-weight: var(--fw-bold);
+}
+
+.footer__link {
+    font-weight: var(--fw-bold);
+
+}
+
+ .footer__link:hover,
+ .social-list__link:hover{
+    opacity: 0.75;
+
+ }
+
+ .footer__link:hover {
+    text-decoration: underline;
+ }
+
+.social-list {
+    list-style:none;
+    display: flex;
+    justify-content: center;
+    margin: 2em 0 0.5;
+    padding: 0;
+}
+
+.social-list__item {
+    margin: 0.5em
+}
+
+.social-list__link { 
+    padding: :0.5em;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+ /*
+ about me section que no hice
+ */
+
+ /*Skills e Idiomas
+
+ .skills {
+    margin: 0;
+    background-color: var(--clr-superlight);
+    background-image:url(../Images/Fondo\ Claro.jpeg);
+    background-size:cover;
+    background-blend-mode:multiply;
+    color: var(--clr-superlight);
+    text-align: center ; /*depende como lo diseñe * /
+
+ }
+
+ .section__title--skills{
+    color: var(--clr-dark);
+    margin-top: ;
+    font-weight: var(--fw-darker);
+ }
+
+ .section__subtitle--skills{
+    color: var(--clr-dark);
+    font-weight: var(--fw-darker);
+    margin-bottom: ;
+ }  
+
+
+ .skillgrade {
+    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px,0.5fr));
+    max-width: 500px;
+ }
+
+ .skillgrade__item {
+    padding: 1em;
+    background: none;
+    overflow: ;
+ }
+
+ .skillgrade__img { 
+    transition: 
+        transform 750ms cubic-bezier(0.5, 0 ,0.5,1),
+        opacity 250ms linear;
+ }
+
+.skillgrade__item:focus{
+    position:relative;
+    z-index: 2;
+}
+
+ .skillgrade__img:hover, 
+ .skillgrade__item:focus .skillgrade__img {
+    transform: scale(1.2);
+    opacity: 1;
+
+ }
+
+*/
+
+
+
+
+
+
